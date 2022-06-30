@@ -1,0 +1,150 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+
+  <div class="heading">
+    <h3>Add Item</h3>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Title -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Title</label>
+      </div>
+
+      <div class="col-75">
+
+        <input placeholder="Enter Title" formControlName="title" id="title" type="text" class="form-control">
+
+        <div class="Error_handling" *ngIf="f.title.dirty && f.title.invalid">
+          <div *ngIf="f.title.errors && f.title.errors.required">
+            Title is required.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Cover URL -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Cover URL</label>
+      </div>
+
+      <div class="col-75">
+
+        <input placeholder="Enter Cover URL" formControlName="cover" id="cover" type="text" class="form-control">
+
+        <div class="Error_handling" *ngIf="f.cover.dirty && f.cover.invalid">
+          <div *ngIf="f.cover.errors && f.cover.errors.required">
+            Cover URL is required.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- genre -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Genre</label>
+      </div>
+
+      <div class="col-75">
+        <select formControlName="genre">
+          <option>Platformer</option>
+          <option>Shooter</option>
+          <option>Adventure</option>
+          <option>Multiplayer</option>
+          <option>Mystery</option>
+        </select>
+        <div class="Error_handling" *ngIf="f.genre.touched && f.genre.errors">
+          <div *ngIf="f.genre.errors.required">Genre is required</div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Created by -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Art</label>
+      </div>
+
+      <div class="col-75">
+
+        <input placeholder="Enter Art" formControlName="art" id="art" type="text" class="form-control">
+
+        <div class="Error_handling" *ngIf="f.art.dirty && f.art.invalid">
+          <div *ngIf="f.art.errors && f.art.errors.required">
+            Art is required.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Description -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Description</label>
+      </div>
+
+      <div class="col-75">
+
+        <input placeholder="Enter Description" formControlName="description" id="art" type="text" class="form-control">
+
+        <div class="Error_handling" *ngIf="f.description.dirty && f.description.invalid">
+          <div *ngIf="f.description.errors && f.description.errors.required">
+            Description is required.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Release_date -->
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Release date</label>
+      </div>
+
+      <div class="col-75">
+
+        <!-- <input placeholder="Release date" formControlName="release_date" id="release_date" type="text" class="form-control"> -->
+        <input placeholder="Release date" class="form-control" formControlName="release_date" id="release_date"
+          type="date">
+
+        <div class="Error_handling" *ngIf="f.release_date.dirty && f.release_date.invalid">
+          <div *ngIf="f.release_date.errors && f.release_date.errors.required">
+            Release date is required.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+  </form>
+
+
+</div>
