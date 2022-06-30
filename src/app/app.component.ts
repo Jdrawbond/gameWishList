@@ -9,7 +9,7 @@ import { GameListService } from './services/game-list.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'listWish';
+  title = 'GameWishList';
   public search_string = '';
 
   form: any = FormGroup;
